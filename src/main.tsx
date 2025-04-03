@@ -4,7 +4,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Layout from './layout';
+import Layout from '@/layout';
+import BookPage from 'pages/client/book';
+import AboutPage from 'pages/client/about';
+import LoginPage from 'pages/client/auth/login';
+import RegisterPage from 'pages/client/auth/register';
+import "styles/glocal.scss";
 
 const router = createBrowserRouter([
   {
@@ -13,21 +18,21 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/book",
-        element: <div>book page</div>
+        element: <BookPage />
       },
       {
         path: "/about",
-        element: <div>about page</div>
+        element: <AboutPage />
       },
     ]
   },
   {
     path: "/login",
-    element: <div>login page</div>
+    element: <LoginPage />
   },
   {
     path: "/register",
-    element: <div>register page</div>
+    element: <RegisterPage />
   },
 ]);
 
