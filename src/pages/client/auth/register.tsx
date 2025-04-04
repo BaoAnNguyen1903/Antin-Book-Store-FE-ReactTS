@@ -13,8 +13,8 @@ type FieldType = {
 const RegisterPage = () => {
     const [isSubmit, setIsSubmit] = useState(false); // trạng thái loading
 
-    const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-        console.log('Success:', values);
+    const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
+        console.log(values);
     };
 
     return (

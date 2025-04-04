@@ -7,6 +7,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* Duong link tuyet doi */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
@@ -15,6 +16,7 @@
       "helpers/*": ["./src/helpers/*"],
       "pages/*": ["./src/pages/*"],
       "styles/*": ["./src/styles/*"],
+      "services/*": ["./src/services/*"],
     },
 
     /* Bundler mode */
