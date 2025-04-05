@@ -1,20 +1,38 @@
 import type { FormProps } from 'antd';
 import { Button, Divider, Form, Input } from 'antd';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './register.scss'
+import { registerAPI } from '@/services/api';
+import { App } from 'antd';
 
 type FieldType = {
-    fullName?: string;
-    email?: string;
-    password?: string;
-    phone?: string;
+    fullName: string;
+    email: string;
+    password: string;
+    phone: string;
 };
 
 const RegisterPage = () => {
     const [isSubmit, setIsSubmit] = useState(false); // trạng thái loading
+    const { message } = App.useApp();
+    const navigate = useNavigate();
 
     const onFinish: FormProps<FieldType>['onFinish'] = async (values) => {
-        console.log(values);
+        setIsSubmit(true);
+        const {fullName, email, password, phone} = values;
+        const res = await registerAPI(fullName, email, password, phone);
+        console.log(">>>check res: ", res)
+        console.log(">>>type of res: ", typeof res)
+        if (res.data) {
+            //success
+            message.success("Đăng ký tài khoản thành công");
+            navigate("/login")
+        } else {
+            //error
+            message.error(res.message);
+        }
+        setIsSubmit(false);
     };
 
     return (
