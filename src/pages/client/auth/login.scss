@@ -1,0 +1,60 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .main {
+        width: 100%;
+        max-width: 450px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  
+        .heading {
+            text-align: center;
+  
+            .text-large {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+            }
+        }
+  
+        .ant-form {
+            .ant-form-item {
+                margin-bottom: 15px;
+            }
+  
+            .ant-input,
+            .ant-input-password {
+                height: 40px;
+                font-size: 16px;
+            }
+  
+            .ant-btn-primary {
+                width: 100%;
+                height: 40px;
+                font-size: 16px;
+                background: #1890ff;
+                border: none;
+                &:hover {
+                    background: #40a9ff;
+                }
+            }
+        }
+  
+        .text-normal {
+            font-size: 14px;
+            color: #666;
+        }
+  
+        a {
+            color: #1890ff;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
