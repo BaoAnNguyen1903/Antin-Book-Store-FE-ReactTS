@@ -13,6 +13,7 @@ import "styles/glocal.scss";
 import HomePage from 'pages/client/home';
 import { App } from 'antd';
 import { AppProvider } from 'components/context/app.context';
+import ProtectedRoute from 'components/auth';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,22 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />
+      },
+      {
+        path: "/checkout", // thanh toan
+        element: (
+          <ProtectedRoute>
+            <div>checkout page</div>
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: "/admin",
+        element: (
+          <ProtectedRoute>
+            <div>admin page</div>
+          </ProtectedRoute>
+        )
       },
     ]
   },

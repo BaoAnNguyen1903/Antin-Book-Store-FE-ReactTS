@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const instance = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_URL,
+    withCredentials: true // có thuộc tính này sẽ su dung đc cookies (refresh token)
 });
 
 instance.interceptors.request.use(function (config) {
