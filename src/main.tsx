@@ -16,6 +16,7 @@ import ManageBookPage from "pages/admin/manage.book";
 import DashBoardPage from "pages/admin/dashboard";
 import ManageUserPage from "pages/admin/manage.user";
 import enUS from "antd/locale/en_US";
+import LayoutAdmin from "components/layout/layout.admin";
 // import viVN from "antd/locale/vi_VN";
 
 const router = createBrowserRouter([

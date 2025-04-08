@@ -39,7 +39,7 @@ export const fetchAccountAPI = () => {
 
 export const logoutAPI = () => {
   const urlBackend = "/api/v1/auth/logout";
-  return axios.get<IBackendRes<IRegister>>(urlBackend); // logout k cần datatype nên để IRegister cx đc
+  return axios.post<IBackendRes<IRegister>>(urlBackend); // logout k cần datatype nên để IRegister cx đc
 };
 
 export const getUsersAPI = (query: string) => {
