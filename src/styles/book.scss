@@ -1,0 +1,155 @@
+@import "react-image-gallery/styles/scss/image-gallery.scss";
+
+.view-detail-book {
+
+    .original-image,
+    .thumbnail-image {
+        cursor: pointer;
+    }
+
+    .title {
+        margin: 5px 0;
+        color: #242424;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 32px;
+        word-break: break-word;
+    }
+
+    .rating {
+        display: flex;
+        margin: 10px 0;
+    }
+
+    .price {
+        border-radius: 4px;
+        background-color: rgb(250, 250, 250);
+        padding: 25px;
+        margin-bottom: 20px;
+
+        .currency {
+            font-size: 32px;
+            line-height: 40px;
+            margin-right: 8px;
+            font-weight: 500;
+            color: #ee4d2d;
+        }
+    }
+
+    .delivery {
+        padding: 10px 0;
+    }
+
+    .quantity {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+
+        .right {
+            display: flex;
+
+            input {
+                width: 50px;
+                height: 32px;
+                border-left: 0;
+                border-right: 0;
+                font-size: 16px;
+                font-weight: 400;
+                box-sizing: border-box;
+                text-align: center;
+                cursor: text;
+                border-radius: 0;
+                border: 1px solid rgba(0, 0, 0, 0.09);
+                outline: none;
+            }
+
+            button {
+                outline: none;
+                cursor: pointer;
+                border: 0;
+                font-size: .875rem;
+                font-weight: 300;
+                line-height: 1;
+                letter-spacing: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color .1s cubic-bezier(.4, 0, .6, 1);
+                border: 1px solid rgba(0, 0, 0, .09);
+                border-radius: 2px;
+                background: transparent;
+                color: rgba(0, 0, 0, .8);
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    .left {
+        color: #757575;
+        width: 110px;
+        text-transform: capitalize;
+        display: inline-block;
+    }
+
+    .buy {
+        display: flex;
+        gap: 20px;
+        padding: 20px 0;
+
+        button {
+            overflow: visible;
+            outline: 0;
+            background: #ff57221a;
+            color: #ee4d2d;
+            border: 1px solid #ee4d2d;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+            cursor: pointer;
+            border-radius: 3px;
+
+            font-size: 16px;
+            height: 48px;
+            padding: 0 20px;
+
+            &.now {
+                color: #fff;
+                position: relative;
+                overflow: visible;
+                outline: 0;
+                background: #ee4d2d;
+            }
+        }
+
+        .cart {
+            &:hover {
+                background: #ffc5b22e;
+            }
+
+            span {
+                padding-left: 5px;
+            }
+        }
+
+        .now {
+            &:hover {
+                background: #f05d40;
+            }
+        }
+    }
+
+}
+
+.modal-gallery {
+    .active {
+        border: 2px solid #ee4d2d;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        top: 0;
+    }
+
+    .img-normal {
+        cursor: pointer;
+    }
+}
