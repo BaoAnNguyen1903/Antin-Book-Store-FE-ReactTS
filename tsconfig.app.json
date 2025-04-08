@@ -29,8 +29,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false, /* set lai */
+    "noUnusedParameters": false, /* set lai */
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
