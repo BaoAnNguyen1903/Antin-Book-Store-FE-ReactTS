@@ -1,3 +1,76 @@
 * {
     margin: 0;
 }
+
+.popover-carts {
+    .pop-cart-body {
+        .pop-cart-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            .book {
+                display: flex;
+                gap: 5px;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .price {
+                    color: #ee4d2d;
+                }
+            }
+        }
+
+        .pop-cart-footer {
+            margin-top: 10px;
+            display: flex;
+            justify-content: end;
+
+            button {
+                background-color: #ee4d2d;
+                color: #fff;
+                border: 1px solid #ee4d2d;
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+                cursor: pointer;
+                border-radius: 3px;
+
+                font-size: 16px;
+                height: 40px;
+                padding: 0 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) {
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-button {
+        width: 8px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgb(255, 255, 255);
+        border: thin solid rgb(238, 238, 238);
+        box-shadow: 0px 0px 3px #dfdfdf inset;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border: thin solid #ccc;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #7d7d7d;
+    }
+
+}

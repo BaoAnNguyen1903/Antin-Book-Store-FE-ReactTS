@@ -1,0 +1,86 @@
+.order-container {
+    .order-book {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+
+        .book-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 50%;
+            justify-content: space-between;
+
+            img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        .action {
+            width: 50%;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+    }
+
+    .order-sum {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        gap: 20px;
+
+        .calculate {
+            display: flex;
+            justify-content: space-between;
+
+            .sum-final {
+                color: #fe3834;
+                font-size: 22px;
+                font-weight: 400;
+            }
+        }
+
+        // button {
+        //     margin-top: 15px;
+        //     background-color: #ee4d2d;
+        //     color: #fff;
+        //     border: 1px solid #ee4d2d;
+        //     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .03);
+        //     cursor: pointer;
+        //     border-radius: 3px;
+        //     font-size: 16px;
+        //     height: 40px;
+        //     padding: 0 20px;
+
+        //     &:hover {
+        //         background-color: #e45b3f;
+
+        //     }
+        // }
+
+        .info,
+        .method,
+        .address {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+    }
+
+    .order-steps {
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+}

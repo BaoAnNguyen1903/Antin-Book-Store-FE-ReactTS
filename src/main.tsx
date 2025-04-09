@@ -17,6 +17,7 @@ import DashBoardPage from "pages/admin/dashboard";
 import ManageUserPage from "pages/admin/manage.user";
 import enUS from "antd/locale/en_US";
 import LayoutAdmin from "components/layout/layout.admin";
+import OrderPage from "./pages/client/order";
 // import viVN from "antd/locale/vi_VN";
 
 const router = createBrowserRouter([
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: "/book/:id",
         element: <BookPage />
+      },
+      {
+        path: "/order",
+        element: (
+          <ProtectedRoute>
+            <OrderPage />
+          </ProtectedRoute>
+        )
       },
       {
         path: "/about",

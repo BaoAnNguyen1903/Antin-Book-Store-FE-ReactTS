@@ -1,4 +1,25 @@
 import axios from "services/axios.customize";
+import createInstanceAxios from 'services/axios.customize';
+
+const axiosPayment = createInstanceAxios(import.meta.env.VITE_BACKEND_PAYMENT_URL);
+
+export const getVNPayUrlAPI = (amount: number, locale: string, paymentRef: string) => {
+  const urlBackend = "/vnpay/payment-url";
+  return axiosPayment.post<IBackendRes<{ url: string }>>(urlBackend,
+      { amount, locale, paymentRef })
+}
+
+export const updatePaymentOrderAPI = (paymentStatus: string, paymentRef: string) => {
+  const urlBackend = "/api/v1/order/update-payment-status";
+  return axios.post<IBackendRes<ILogin>>(urlBackend,
+      { paymentStatus, paymentRef },
+      {
+          headers: {
+              delay: 1000
+          }
+      }
+  )
+}
 
 export const loginAPI = (username: string, password: string) => {
   const urlBackend = "/api/v1/auth/login";
