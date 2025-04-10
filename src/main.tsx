@@ -20,8 +20,8 @@ import OrderPage from "pages/client/order";
 import HistoryPage from "pages/client/history";
 import enUS from "antd/locale/en_US";
 // import viVN from "antd/locale/vi_VN";
-import ReturnURLPage from "components/client/order/return.url";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import ReturnURLPage from "components/client/order/return.url";
 
 const router = createBrowserRouter([
   {
