@@ -184,7 +184,7 @@ const HomePage = () => {
                   />
                 </div>
                 <Divider />
-                <Form // bọc vào 1 cái form vì form của antd sẽ rerender k cần state của react
+                <Form
                   onFinish={onFinish}
                   form={form}
                   onValuesChange={(changedValues, values) =>
