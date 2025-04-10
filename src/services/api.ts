@@ -1,25 +1,39 @@
-import axios from "services/axios.customize";
-import createInstanceAxios from 'services/axios.customize';
+import createInstanceAxios from "services/axios.customize";
 
-const axiosPayment = createInstanceAxios(import.meta.env.VITE_BACKEND_PAYMENT_URL);
+const axios = createInstanceAxios(import.meta.env.VITE_BACKEND_URL);
 
-export const getVNPayUrlAPI = (amount: number, locale: string, paymentRef: string) => {
+const axiosPayment = createInstanceAxios(
+  import.meta.env.VITE_BACKEND_PAYMENT_URL
+);
+
+export const getVNPayUrlAPI = (
+  amount: number,
+  locale: string,
+  paymentRef: string
+) => {
   const urlBackend = "/vnpay/payment-url";
-  return axiosPayment.post<IBackendRes<{ url: string }>>(urlBackend,
-      { amount, locale, paymentRef })
-}
+  return axiosPayment.post<IBackendRes<{ url: string }>>(urlBackend, {
+    amount,
+    locale,
+    paymentRef
+  });
+};
 
-export const updatePaymentOrderAPI = (paymentStatus: string, paymentRef: string) => {
+export const updatePaymentOrderAPI = (
+  paymentStatus: string,
+  paymentRef: string
+) => {
   const urlBackend = "/api/v1/order/update-payment-status";
-  return axios.post<IBackendRes<ILogin>>(urlBackend,
-      { paymentStatus, paymentRef },
-      {
-          headers: {
-              delay: 1000
-          }
+  return axios.post<IBackendRes<ILogin>>(
+    urlBackend,
+    { paymentStatus, paymentRef },
+    {
+      headers: {
+        delay: 1000
       }
-  )
-}
+    }
+  );
+};
 
 export const loginAPI = (username: string, password: string) => {
   const urlBackend = "/api/v1/auth/login";
@@ -28,7 +42,7 @@ export const loginAPI = (username: string, password: string) => {
     { username, password },
     {
       headers: {
-        delay: 5000 // backend phải xử lí thì mới dùng được thuộc tính này
+        delay: 1000
       }
     }
   );
@@ -53,14 +67,14 @@ export const fetchAccountAPI = () => {
   const urlBackend = "/api/v1/auth/account";
   return axios.get<IBackendRes<IFetchAccount>>(urlBackend, {
     headers: {
-      delay: 3000
+      delay: 100
     }
   });
 };
 
 export const logoutAPI = () => {
   const urlBackend = "/api/v1/auth/logout";
-  return axios.post<IBackendRes<IRegister>>(urlBackend); // logout k cần datatype nên để IRegister cx đc
+  return axios.post<IBackendRes<IRegister>>(urlBackend);
 };
 
 export const getUsersAPI = (query: string) => {
@@ -84,7 +98,7 @@ export const createUserAPI = (
 };
 
 export const bulkCreateUserAPI = (
-  data: {
+  hoidanit: {
     fullName: string;
     password: string;
     email: string;
@@ -92,13 +106,12 @@ export const bulkCreateUserAPI = (
   }[]
 ) => {
   const urlBackend = "/api/v1/user/bulk-create";
-  return axios.post<IBackendRes<IResponseImport>>(urlBackend, data);
+  return axios.post<IBackendRes<IResponseImport>>(urlBackend, hoidanit);
 };
 
 export const updateUserAPI = (_id: string, fullName: string, phone: string) => {
   const urlBackend = "/api/v1/user";
   return axios.put<IBackendRes<IRegister>>(urlBackend, {
-    // k cần quan tâm đến phản hồi
     _id,
     fullName,
     phone
