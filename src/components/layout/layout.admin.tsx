@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   AppstoreOutlined,
   ExceptionOutlined,
-  HeartTwoTone,
   TeamOutlined,
   UserOutlined,
   DollarCircleOutlined,
@@ -10,7 +9,7 @@ import {
   MenuUnfoldOutlined
 } from "@ant-design/icons";
 import { Layout, Menu, Dropdown, Space, Avatar } from "antd";
-import { Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCurrentApp } from "../context/app.context";
 import type { MenuProps } from "antd";
@@ -18,7 +17,7 @@ import { logoutAPI } from "@/services/api";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
-const { Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const LayoutAdmin = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -27,6 +26,7 @@ const LayoutAdmin = () => {
     useCurrentApp();
 
   const location = useLocation();
+  const navigate = useNavigate();
 
   const items: MenuItem[] = [
     {
@@ -74,6 +74,7 @@ const LayoutAdmin = () => {
       setIsAuthenticated(false);
       localStorage.removeItem("access_token");
       localStorage.removeItem("carts");
+      navigate("/");
     }
   };
 
@@ -167,9 +168,6 @@ const LayoutAdmin = () => {
           <Content style={{ padding: "15px" }}>
             <Outlet />
           </Content>
-          <Footer style={{ padding: 0, textAlign: "center" }}>
-            React Test Fresher &copy; Hỏi Dân IT - Made with <HeartTwoTone />
-          </Footer>
         </Layout>
       </Layout>
     </>
