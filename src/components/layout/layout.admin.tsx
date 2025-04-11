@@ -9,7 +9,7 @@ import {
   MenuUnfoldOutlined
 } from "@ant-design/icons";
 import { Layout, Menu, Dropdown, Space, Avatar } from "antd";
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCurrentApp } from "../context/app.context";
 import type { MenuProps } from "antd";
